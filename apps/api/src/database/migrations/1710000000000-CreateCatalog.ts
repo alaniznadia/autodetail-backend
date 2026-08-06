@@ -17,7 +17,7 @@ export class CreateCatalog1710000000000 implements MigrationInterface {
     await queryRunner.query(`
       CREATE TABLE categorias (
         id SERIAL PRIMARY KEY,
-        nombre VARCHAR(100) NOT NULL,
+        nombre VARCHAR(100) NOT NULL UNIQUE,
         slug VARCHAR(120) NOT NULL UNIQUE,
         categoria_padre_id INT REFERENCES categorias(id) ON DELETE SET NULL,
         imagen_url VARCHAR(255),
