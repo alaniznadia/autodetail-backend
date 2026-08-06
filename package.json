@@ -1,0 +1,20 @@
+{
+  "name": "autodetail-pro",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:unit": "turbo test:unit",
+    "test:integration": "turbo test:integration",
+    "db:up": "docker compose -f infra/docker/docker-compose.yml up -d postgres redis",
+    "db:down": "docker compose -f infra/docker/docker-compose.yml down",
+    "db:logs": "docker compose -f infra/docker/docker-compose.yml logs -f postgres redis"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3"
+  }
+}
